@@ -1,12 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from '@webpack/common'; // Use @webpack/common for React
 
-// Replaced const with let
-let autoReplyMessage: string | null = null; // Use let to allow reassignment
-let lastSender: string | null = null;
+let autoReplyMessage = null; // Changed to 'let' for mutability
+let lastSender = null;
 
-// Define the function for plugin settings (custom or imported)
 function definePluginSettings(settings: any) {
-    // Example definition for settings
     return settings;
 }
 
@@ -19,7 +16,6 @@ const settings = definePluginSettings({
     }
 });
 
-// Function to send message to the textarea
 function sendMessage(content: string): void {
     const textarea = document.querySelector("textarea") as HTMLTextAreaElement;
     if (!textarea) return;
@@ -81,7 +77,7 @@ document.addEventListener("DOMNodeInserted", (event: Event) => {
 });
 
 const AutoReplyPlugin = () => {
-    const { autoReplyMessage } = settings; // Direct access to settings
+    const { autoReplyMessage } = settings;
 
     useEffect(() => {
         const handleNewMessage = () => {
