@@ -124,7 +124,7 @@ const AutoReplyPlugin = () => {
     return (
         <div>
             <h3>Auto Reply Plugin Active</h3>
-            <p>Replies with a custom message when a message starts with `start <message>`.</p>
+            <p>Replies with a custom message when a message starts with `start &lt;message&gt;`.</p>
         </div>
     );
 };
